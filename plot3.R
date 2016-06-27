@@ -10,6 +10,8 @@ SM3 <- as.numeric(Mydata$Sub_metering_3)
 
 png("plot3.png", width=480, height=480)
 
-plot(DateTime, C(SM1, SM2, SM3), col = c("black", "red", "blue"), type = "l", xlab = "", ylab="Energy sub metering")
-legend("topright", pch = plotchar, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Submetering_3"))
+plot(DateTime, SM1, type = "l", xlab = "", ylab="Energy sub metering")
+lines(DateTime, SM2, type = "l", col = "red")
+lines(DateTime, SM3, type = "l", col = "blue")
+legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Submetering_3"))
 dev.off()
